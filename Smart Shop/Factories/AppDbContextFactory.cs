@@ -1,18 +1,23 @@
-﻿using Microsoft.EntityFrameworkCore.Design;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 using Smart_Shop.Data;
+using Smart_Shop.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
+using System.Text.Json;
 
 namespace Smart_Shop.Factories
 {
     public class AppDbContextFactory : IDesignTimeDbContextFactory<AppDbContext>
     {
-        public AppDbContext CreateDbContext(string[] args = null)
+        public AppDbContext CreateDbContext(string[]? args = null)
         {
-            throw new NotImplementedException();
+            var jsonFile = File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data",
+                "appsettings.json"));
+            var json = JsonSerializer.Deserialize<ConfigJson>(jsonFile!);
+            var options = new DbContextOptionsBuilder<AppDbContext>();
+            options.UseNpgsql(json!.ConnectionString!);
+            return new AppDbContext(options.Options);
         }
     }
 }

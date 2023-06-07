@@ -13,6 +13,7 @@
                 <ResourceDictionary Source="/Theme/Colors/Dark/Theme_Dark.xaml" />
                 <ResourceDictionary Source="/Theme/Colors/Light/Theme_Light.xaml" />
                 <ResourceDictionary Source="/Theme/Colors/Default_Colors.xaml" />
+                <ResourceDictionary Source="/Styles/TextboxStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

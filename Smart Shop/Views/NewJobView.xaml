@@ -4,9 +4,173 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Smart_Shop.Views"
+             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             Height="450" Width="800">
+    <Grid >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="30" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20"/>
+        </Grid.RowDefinitions>
+
+        <!-- #region Header -->
+        <TextBlock Grid.Column="1"
+                   Grid.Row="0" 
+                   Text="New Job"
+                   FontSize="22"
+                   Foreground="{StaticResource SecondaryAccentColorBrush}"
+                   HorizontalAlignment="Left"
+                   VerticalAlignment="Center"
+                   Margin="20 0"/>
+        <!-- #endregion -->
+
+        <!-- #region Row 1 CUSTOMERS -->
+        <StackPanel Grid.Column="1"
+                    Grid.Row="1"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Left"
+                    Margin="20 0">
+
+            <ComboBox 
+                      Background="{StaticResource Primary200ColorBrush}"
+                      Foreground="Black"
+                      Width="200"/>
+            <Button Command="{Binding AddNewCustomerCommand}"
+                    Width="60"
+                    Height="40"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Margin="10 0">
+                <md:PackIcon Kind="PlusCircle"
+                             Width="30"
+                             Height="30"/>
+            </Button>
+
+        </StackPanel>
+        <!-- #endregion -->
+
+        <!-- #region ROW 2 Invoice # / PO #-->
+        <StackPanel Grid.Column="1"
+                    Grid.Row="2"
+                    Orientation="Horizontal">
+            <TextBox Height="30"
+                     Width="150"
+                     HorizontalAlignment="Left"
+                     Margin="20 0 0 0"
+                     md:HintAssist.Hint="Invoice #"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
+             <TextBox Height="30"
+                     Width="150"
+                     HorizontalAlignment="Left"
+                     Margin="10 0 0 0"
+                     md:HintAssist.Hint="PO #"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
+
+        </StackPanel>
+        <!-- #endregion -->
+
+        <!-- #region ROW 3 Due Date / Received Date -->
+        <StackPanel Grid.Column="1"
+                    Grid.Row="3"
+                    Orientation="Horizontal">
+            <TextBox Height="30"
+                     Width="150"
+                     HorizontalAlignment="Left"
+                     Margin="20 0 10 0"
+                     md:HintAssist.Hint="Received Date"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
+            <TextBox Height="30"
+                     Width="150"
+                     HorizontalAlignment="Left"
+                     Margin="0 0"
+                     md:HintAssist.Hint="Due Date"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
+
+        </StackPanel>
+        <!-- #endregion -->
+
+        <!-- #region ROW 3 Due Date / Received Date -->
+        <StackPanel Grid.Column="1"
+                    Grid.Row="4"
+                    Orientation="Horizontal">
+            <TextBox Height="30"
+                     Width="310"
+                     HorizontalAlignment="Left"
+                     Margin="20 0 10 0"
+                     md:HintAssist.Hint="Job Name"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
+
+
+        </StackPanel>
+        <!-- #endregion -->
+
+        <!-- #region Control Buttons -->
+        <StackPanel Grid.Column="2"
+                     Grid.Row="9"
+                     Orientation="Horizontal"
+                     HorizontalAlignment="Right"
+                     Margin="20 0">
+
+            <Button Command="{Binding AddNewCustomerCommand}"
+                    Width="60"
+                    Height="40"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Margin="4 0">
+                <md:PackIcon Kind="ContentSave"
+                             Width="30"
+                             Height="30"/>
+            </Button>
+            <Button Command="{Binding AddNewCustomerCommand}"
+                    Width="60"
+                    Height="40"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Margin="4 0">
+                <md:PackIcon Kind="CancelThick"
+                             Width="30"
+                             Height="30"
+                             Foreground="Red"/>
+            </Button>
+
+        </StackPanel>
+        <!-- #endregion -->
+
+
     </Grid>
 </UserControl>

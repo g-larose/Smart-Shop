@@ -2,6 +2,9 @@
 using Microsoft.Extensions.Hosting;
 using Smart_Shop.ViewModels;
 using System.Windows;
+using Smart_Shop.Factories;
+using Smart_Shop.Interfaces;
+using Smart_Shop.Navigation;
 
 
 namespace Smart_Shop
@@ -20,10 +23,13 @@ namespace Smart_Shop
             _host = Host.CreateDefaultBuilder().ConfigureServices(services =>
             {
                 services.AddSingleton<AppViewModel>();
+                services.AddSingleton<AppDbContextFactory>();
+                services.AddSingleton<INavigator, Navigator>();
                 services.AddSingleton<MainWindow>(s => new MainWindow()
                 {
                     DataContext = s.GetRequiredService<AppViewModel>()
                 });
+                
 
             }).Build();
         }
