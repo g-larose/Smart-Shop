@@ -6,13 +6,25 @@
              xmlns:local="clr-namespace:Smart_Shop.Views"
              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             Height="450" Width="800">
-    <Grid >
+             Height="450" Width="500">
+    <Border Background="{StaticResource PrimaryColorBrush}"
+            CornerRadius="10"
+            Width="480"
+            Height="430"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left">
+        <Border.Effect>
+            <DropShadowEffect BlurRadius="10"
+                              ShadowDepth="6"
+                              Direction="270"
+                              Color="Black"
+                              Opacity=".6"/>
+        </Border.Effect>
+        <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="20" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -55,7 +67,8 @@
                     Height="40"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Margin="10 0">
+                    Margin="10 0"
+                    ToolTip="Add New Customer">
                 <md:PackIcon Kind="PlusCircle"
                              Width="30"
                              Height="30"/>
@@ -71,17 +84,31 @@
             <TextBox Height="30"
                      Width="150"
                      HorizontalAlignment="Left"
-                     Margin="20 0 0 0"
+                     Margin="20 0 -10 0"
                      md:HintAssist.Hint="Invoice #"
                      md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
                      md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
                      Foreground="{StaticResource SecondaryAccentColorBrush}"
                      Background="{StaticResource Primary200ColorBrush}"
                      Padding="6"/>
+              <Button Command="{Binding AddNewCustomerCommand}"
+                    Width="60"
+                    Height="40"
+                    Background="Transparent"
+                    BorderBrush="Transparent"
+                    Margin="4 0"
+                    ToolTip="Generate New Invoice Number"
+                    HorizontalContentAlignment="Left">
+                <md:PackIcon Kind="Numbers"
+                             Width="30"
+                             Height="30"
+                             Foreground="{StaticResource AccentToAccent100GradientBrush}"
+                             HorizontalContentAlignment="Left"/>
+            </Button>
              <TextBox Height="30"
                      Width="150"
                      HorizontalAlignment="Left"
-                     Margin="10 0 0 0"
+                     Margin="-10 0 0 0"
                      md:HintAssist.Hint="PO #"
                      md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
                      md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
@@ -120,7 +147,7 @@
         </StackPanel>
         <!-- #endregion -->
 
-        <!-- #region ROW 3 Due Date / Received Date -->
+        <!-- #region ROW 3 Job Name -->
         <StackPanel Grid.Column="1"
                     Grid.Row="4"
                     Orientation="Horizontal">
@@ -139,33 +166,75 @@
         </StackPanel>
         <!-- #endregion -->
 
+         <!-- #region ROW 4 Quantity / Price Per Piece / Total -->
+        <StackPanel Grid.Column="1"
+                    Grid.Row="5"
+                    Orientation="Horizontal">
+            <TextBox Height="30"
+                     Width="96"
+                     HorizontalAlignment="Left"
+                     Margin="20 0 10 0"
+                     md:HintAssist.Hint="Quantity"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
+            <TextBox Height="30"
+                     Width="96"
+                     HorizontalAlignment="Left"
+                     Margin="0 0 10 0"
+                     md:HintAssist.Hint="Price Per Piece $"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
+            <TextBox Height="30"
+                     Width="96"
+                     HorizontalAlignment="Left"
+                     Margin="0 0 10 0"
+                     md:HintAssist.Hint="Total $"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
+
+
+        </StackPanel>
+        <!-- #endregion -->
+
         <!-- #region Control Buttons -->
-        <StackPanel Grid.Column="2"
+        <StackPanel Grid.Column="1"
                      Grid.Row="9"
                      Orientation="Horizontal"
                      HorizontalAlignment="Right"
                      Margin="20 0">
 
-            <Button Command="{Binding AddNewCustomerCommand}"
+            <Button Command=""
                     Width="60"
                     Height="40"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Margin="4 0">
+                    Margin="4 0"
+                    ToolTip="Save New Job">
                 <md:PackIcon Kind="ContentSave"
                              Width="30"
                              Height="30"/>
             </Button>
-            <Button Command="{Binding AddNewCustomerCommand}"
+            <Button Command=""
                     Width="60"
                     Height="40"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Margin="4 0">
-                <md:PackIcon Kind="CancelThick"
+                    Margin="4 0"
+                    ToolTip="Cancel and Close">
+
+                    <md:PackIcon Kind="CancelThick"
                              Width="30"
                              Height="30"
-                             Foreground="Red"/>
+                             Foreground="Red" />
             </Button>
 
         </StackPanel>
@@ -173,4 +242,6 @@
 
 
     </Grid>
+    </Border>
+    
 </UserControl>

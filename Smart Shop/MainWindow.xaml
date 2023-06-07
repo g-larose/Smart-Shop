@@ -203,7 +203,7 @@
                         <ColumnDefinition Width="20"/>
                         <ColumnDefinition Width="500"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0">
+                    <Grid Grid.Column="0" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30" />
                             <ColumnDefinition Width="*" />
@@ -216,7 +216,7 @@
                     </Grid.RowDefinitions>
                          <ContentControl Grid.Column="1"
                                          Grid.Row="1"
-                                         HorizontalAlignment="Center"
+                                         HorizontalAlignment="Left"
                                          VerticalAlignment="Top"
                                          Margin="20"
                                          Content="{Binding Path=CurrentViewModel}">
