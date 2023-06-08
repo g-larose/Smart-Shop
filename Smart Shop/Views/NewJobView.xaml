@@ -27,8 +27,7 @@
             <ColumnDefinition Width="20" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -48,7 +47,7 @@
                    Foreground="{StaticResource SecondaryAccentColorBrush}"
                    HorizontalAlignment="Left"
                    VerticalAlignment="Center"
-                   Margin="20 0"/>
+                   Margin="20 10 0 0"/>
         <!-- #endregion -->
 
         <!-- #region Row 1 CUSTOMERS -->
@@ -58,20 +57,22 @@
                     HorizontalAlignment="Left"
                     Margin="20 0">
 
-            <ComboBox 
+            <ComboBox ItemsSource="{Binding Customers}"
+                      Style="{StaticResource MaterialDesignComboBox}"
+                      SelectedIndex="0"
                       Background="{StaticResource Primary200ColorBrush}"
-                      Foreground="Black"
+                      Foreground="{StaticResource SecondaryAccentColorBrush}"
                       Width="200"/>
             <Button Command="{Binding AddNewCustomerCommand}"
                     Width="60"
-                    Height="40"
+                    Height="30"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Margin="10 0"
+                    Margin="4 -6 0 0"
                     ToolTip="Add New Customer">
                 <md:PackIcon Kind="PlusCircle"
                              Width="30"
-                             Height="30"/>
+                             Height="20"/>
             </Button>
 
         </StackPanel>
@@ -106,7 +107,7 @@
                              HorizontalContentAlignment="Left"/>
             </Button>
              <TextBox Height="30"
-                     Width="150"
+                     Width="153"
                      HorizontalAlignment="Left"
                      Margin="-10 0 0 0"
                      md:HintAssist.Hint="PO #"
@@ -124,7 +125,7 @@
                     Grid.Row="3"
                     Orientation="Horizontal">
             <TextBox Height="30"
-                     Width="150"
+                     Width="170"
                      HorizontalAlignment="Left"
                      Margin="20 0 10 0"
                      md:HintAssist.Hint="Received Date"
@@ -134,7 +135,7 @@
                      Background="{StaticResource Primary200ColorBrush}"
                      Padding="6"/>
             <TextBox Height="30"
-                     Width="150"
+                     Width="170"
                      HorizontalAlignment="Left"
                      Margin="0 0"
                      md:HintAssist.Hint="Due Date"
@@ -147,12 +148,12 @@
         </StackPanel>
         <!-- #endregion -->
 
-        <!-- #region ROW 3 Job Name -->
+        <!-- #region ROW 4 Job Name -->
         <StackPanel Grid.Column="1"
                     Grid.Row="4"
                     Orientation="Horizontal">
             <TextBox Height="30"
-                     Width="310"
+                     Width="350"
                      HorizontalAlignment="Left"
                      Margin="20 0 10 0"
                      md:HintAssist.Hint="Job Name"
@@ -166,12 +167,12 @@
         </StackPanel>
         <!-- #endregion -->
 
-         <!-- #region ROW 4 Quantity / Price Per Piece / Total -->
+         <!-- #region ROW 5 Quantity / Price Per Piece / Total -->
         <StackPanel Grid.Column="1"
                     Grid.Row="5"
                     Orientation="Horizontal">
             <TextBox Height="30"
-                     Width="96"
+                     Width="110"
                      HorizontalAlignment="Left"
                      Margin="20 0 10 0"
                      md:HintAssist.Hint="Quantity"
@@ -181,7 +182,7 @@
                      Background="{StaticResource Primary200ColorBrush}"
                      Padding="6"/>
             <TextBox Height="30"
-                     Width="96"
+                     Width="110"
                      HorizontalAlignment="Left"
                      Margin="0 0 10 0"
                      md:HintAssist.Hint="Price Per Piece $"
@@ -191,7 +192,7 @@
                      Background="{StaticResource Primary200ColorBrush}"
                      Padding="6"/>
             <TextBox Height="30"
-                     Width="96"
+                     Width="110"
                      HorizontalAlignment="Left"
                      Margin="0 0 10 0"
                      md:HintAssist.Hint="Total $"
@@ -205,39 +206,65 @@
         </StackPanel>
         <!-- #endregion -->
 
-        <!-- #region Control Buttons -->
+         <!-- #region ROW 6 Job Name -->
         <StackPanel Grid.Column="1"
-                     Grid.Row="9"
-                     Orientation="Horizontal"
-                     HorizontalAlignment="Right"
-                     Margin="20 0">
+                    Grid.Row="6"
+                    Orientation="Horizontal">
+            <TextBox Height="30"
+                     Width="350"
+                     HorizontalAlignment="Left"
+                     Margin="20 0 10 0"
+                     md:HintAssist.Hint="Comment"
+                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                     Foreground="{StaticResource SecondaryAccentColorBrush}"
+                     Background="{StaticResource Primary200ColorBrush}"
+                     Padding="6"/>
 
-            <Button Command=""
-                    Width="60"
-                    Height="40"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    Margin="4 0"
-                    ToolTip="Save New Job">
-                <md:PackIcon Kind="ContentSave"
-                             Width="30"
-                             Height="30"/>
-            </Button>
-            <Button Command=""
-                    Width="60"
-                    Height="40"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    Margin="4 0"
-                    ToolTip="Cancel and Close">
-
-                    <md:PackIcon Kind="CancelThick"
-                             Width="30"
-                             Height="30"
-                             Foreground="Red" />
-            </Button>
 
         </StackPanel>
+
+        <!-- #region Control Buttons -->
+            <Grid Grid.Column="1"
+                  Grid.Row="8">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="1"
+                            Orientation="Horizontal"
+                            HorizontalAlignment="Left"
+                            Margin="20 0">
+
+                    <Button Command=""
+                            Width="60"
+                            Height="40"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Margin="4 0"
+                            ToolTip="Save New Job">
+                        <md:PackIcon Kind="ContentSave"
+                                     Width="30"
+                                     Height="30"/>
+                    </Button>
+                    <Button Command=""
+                            Width="60"
+                            Height="40"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Margin="4 0"
+                            ToolTip="Cancel and Close">
+
+                            <md:PackIcon Kind="CancelThick"
+                                     Width="30"
+                                     Height="30"
+                                     Foreground="Red" />
+                    </Button>
+
+               </StackPanel>
+
+            </Grid>
+               
         <!-- #endregion -->
 
 

@@ -7,6 +7,7 @@
         xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:vm="clr-namespace:Smart_Shop.ViewModels"
         xmlns:v="clr-namespace:Smart_Shop.Views"
+        xmlns:modal="clr-namespace:Modal;assembly=Modal"
         mc:Ignorable="d"
         WindowStyle="None"
         ResizeMode="NoResize"
@@ -203,7 +204,64 @@
                         <ColumnDefinition Width="20"/>
                         <ColumnDefinition Width="500"/>
                     </Grid.ColumnDefinitions>
-                    <Grid Grid.Column="0" >
+                <modal:Modal Grid.Column="2" 
+                             HorizontalAlignment="Center"
+                             VerticalAlignment="Center"
+                             IsOpen="True">
+                    <Border Width="350"
+                            Background="{StaticResource Primary200ColorBrush}"
+                            CornerRadius="12"
+                            UseLayoutRounding="True"
+                            Height="500">
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="2"
+                                                      ShadowDepth="4"
+                                                      Direction="270"
+                                                      Color="Black"
+                                                      Opacity=".9"/>
+                        </Border.Effect>
+                        <StackPanel>
+                            <TextBlock Text="My Modal"
+                                       FontSize="18"
+                                       Foreground="{StaticResource Primary500ColorBrush}"/>
+                            <TextBox Width="300"
+                                     Height="40"
+                                     Margin="10">
+                                <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="2"
+                                                      ShadowDepth="4"
+                                                      Direction="270"
+                                                      Color="Black"
+                                                      Opacity=".9"/>
+                                </TextBox.Effect>
+                            </TextBox>
+                            <TextBox Width="300"
+                                     Height="40"
+                                     Margin="10">
+                                 <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="2"
+                                                      ShadowDepth="4"
+                                                      Direction="270"
+                                                      Color="Black"
+                                                      Opacity=".6"/>
+                                </TextBox.Effect>
+                            </TextBox>
+                            <TextBox Width="300"
+                                     Height="40"
+                                     Margin="10">
+                                 <TextBox.Effect>
+                                    <DropShadowEffect BlurRadius="2"
+                                                      ShadowDepth="4"
+                                                      Direction="270"
+                                                      Color="Black"
+                                                      Opacity=".6"/>
+                                </TextBox.Effect>
+                            </TextBox>
+                    </StackPanel>
+                    </Border>
+                   
+                </modal:Modal>
+                <Grid Grid.Column="0" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30" />
                             <ColumnDefinition Width="*" />
@@ -214,6 +272,7 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="30" />
                     </Grid.RowDefinitions>
+                       
                          <ContentControl Grid.Column="1"
                                          Grid.Row="1"
                                          HorizontalAlignment="Left"

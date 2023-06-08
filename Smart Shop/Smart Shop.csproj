@@ -32,6 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Modal\Modal.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Data\appsettings.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

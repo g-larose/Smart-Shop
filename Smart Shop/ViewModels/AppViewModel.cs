@@ -19,7 +19,9 @@ namespace Smart_Shop.ViewModels
         public ViewModelBase? CurrentViewModel => _navigator.CurrentViewModel;
         public ICommand ExitApplicationCommand { get; }
         public ICommand NavigateNewJobCommand { get; }
-        
+
+   
+
         public AppViewModel(INavigator navigator, AppDbContextFactory dbFactory)
         {
             _navigator = navigator;
