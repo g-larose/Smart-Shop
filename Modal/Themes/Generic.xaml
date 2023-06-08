@@ -13,8 +13,23 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="10"
                         Visibility="{TemplateBinding IsOpen, Converter={StaticResource BooleanToVisibilityConverter}}">
-                            <ContentControl Content="{TemplateBinding Content}" />
+                           
+                        <Border Width="{TemplateBinding Width}"
+                             
+                                UseLayoutRounding="True"
+                                Height="{TemplateBinding Height}">
+                             <ContentControl Content="{TemplateBinding Content}" />
+                           
+                        </Border>
+                        <Border.Effect>
+                            <DropShadowEffect BlurRadius="6"
+                                              ShadowDepth="4"
+                                              Direction="270"
+                                              Color="Black"
+                                              Opacity=".4"/>
+                            </Border.Effect>
                     </Border>
                        
                 </ControlTemplate>
