@@ -27,15 +27,29 @@ namespace Smart_Shop.ViewModels
 
        }
 
+       private bool _isOpen;
+
+       public bool IsOpen
+       {
+           get => _isOpen;
+           set => OnPropertyChanged(ref _isOpen, value);
+       }
+
        public NewJobViewModel(AppDbContextFactory dbFactory, INavigator navigator)    
        {
            _dbFactory = dbFactory;
            _navigator = navigator;
-           AddCustomerCommand = new NavigateCommand<NewCustomerViewModel>(_navigator, () => new NewCustomerViewModel());
+           //AddCustomerCommand = new NavigateCommand<NewCustomerViewModel>(_navigator, () => new NewCustomerViewModel());
+           AddCustomerCommand = new RelayCommand(AddNewCustomer);
            LoadCustomers();
        }
 
-       private void LoadCustomers()
+        private void AddNewCustomer()
+        {
+            IsOpen = !IsOpen;
+        }
+
+        private void LoadCustomers()
        {
            Customers = new List<string>();
            Customers.Add("Choose Customer");

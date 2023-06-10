@@ -204,52 +204,7 @@
                         <ColumnDefinition Width="20"/>
                         <ColumnDefinition Width="500"/>
                     </Grid.ColumnDefinitions>
-                <modal:Modal Grid.Column="2" 
-                             HorizontalAlignment="Center"
-                             VerticalAlignment="Center"
-                             IsOpen="True"
-                             Height="500"
-                             Width="350"
-                             Background="{StaticResource Primary200ColorBrush}">
-                    
-                        <StackPanel>
-                            <TextBlock Text="Add New Customer"
-                                       FontSize="22"
-                                       Foreground="{StaticResource SecondaryAccentColorBrush}"
-                                       HorizontalAlignment="Center"
-                                       Margin="0 10"/>
-                            <TextBox Width="300"
-                                     Height="40"
-                                     Margin="10">
-                              
-                            </TextBox>
-                            <TextBox Width="300"
-                                     Height="40"
-                                     Margin="10">
-                                
-                            </TextBox>
-                            <TextBox Width="300"
-                                     Height="40"
-                                     Margin="10">
-                               
-                            </TextBox>
-                        <Button 
-                             Width="60"
-                             Height="40"
-                             HorizontalAlignment="Right"
-                             Margin="0 10 20 0"
-                             Background="Transparent"
-                             BorderBrush="Transparent"
-                             Command="">
-                         <md:PackIcon Kind="ContentSave"
-                                      Width="32"
-                                      Height="34"
-                                      Foreground="{StaticResource SecondaryAccentColorBrush}"/>
 
-                     </Button>
-                    </StackPanel>
-                   
-                </modal:Modal>
                 <Grid Grid.Column="0" >
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="30" />

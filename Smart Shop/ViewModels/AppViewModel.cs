@@ -31,6 +31,8 @@ namespace Smart_Shop.ViewModels
             ExitApplicationCommand = new RelayCommand(ExitApp);
         }
 
+      
+
         private void OnCurrentViewModelChanged()
         {
             OnPropertyChanged(nameof(CurrentViewModel));

@@ -7,31 +7,35 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type local:Modal}">
                     <ControlTemplate.Resources>
-                        <BooleanToVisibilityConverter  x:Key="BooleanToVisibilityConverter"/>
+                        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
                     </ControlTemplate.Resources>
                     <Border
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-                        CornerRadius="10"
-                        Visibility="{TemplateBinding IsOpen, Converter={StaticResource BooleanToVisibilityConverter}}">
-                           
-                        <Border Width="{TemplateBinding Width}"
-                             
-                                UseLayoutRounding="True"
-                                Height="{TemplateBinding Height}">
-                             <ContentControl Content="{TemplateBinding Content}" />
-                           
+                        CornerRadius="12"
+                        Visibility="{TemplateBinding IsOpen,
+                                                     Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                        <Border
+                            Width="{TemplateBinding Width}"
+                            Height="{TemplateBinding Height}"
+                            CornerRadius="12"
+                            UseLayoutRounding="True">
+
+                            <ContentControl Content="{TemplateBinding Content}" />
+
                         </Border>
                         <Border.Effect>
-                            <DropShadowEffect BlurRadius="6"
-                                              ShadowDepth="4"
-                                              Direction="270"
-                                              Color="Black"
-                                              Opacity=".4"/>
-                            </Border.Effect>
+                            <DropShadowEffect
+                                BlurRadius="6"
+                                Direction="270"
+                                Opacity=".4"
+                                ShadowDepth="4"
+                                Color="Black" />
+                        </Border.Effect>
                     </Border>
-                       
+
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
