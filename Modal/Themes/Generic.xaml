@@ -13,15 +13,14 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
+
                         CornerRadius="12"
                         Visibility="{TemplateBinding IsOpen,
                                                      Converter={StaticResource BooleanToVisibilityConverter}}">
 
                         <Border
-                            Width="{TemplateBinding Width}"
-                            Height="{TemplateBinding Height}"
-                            CornerRadius="12"
-                            UseLayoutRounding="True">
+                            Width="300"
+                            Height="300">
 
                             <ContentControl Content="{TemplateBinding Content}" />
 

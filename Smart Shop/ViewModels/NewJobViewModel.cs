@@ -35,12 +35,21 @@ namespace Smart_Shop.ViewModels
            set => OnPropertyChanged(ref _isOpen, value);
        }
 
+       private Guid _identifier;
+
+       public Guid Identifier
+       {
+           get => _identifier;
+           set => OnPropertyChanged(ref _identifier, value);
+       }
+
        public NewJobViewModel(AppDbContextFactory dbFactory, INavigator navigator)    
        {
            _dbFactory = dbFactory;
            _navigator = navigator;
            //AddCustomerCommand = new NavigateCommand<NewCustomerViewModel>(_navigator, () => new NewCustomerViewModel());
            AddCustomerCommand = new RelayCommand(AddNewCustomer);
+           Identifier = Guid.NewGuid();
            LoadCustomers();
        }
 
