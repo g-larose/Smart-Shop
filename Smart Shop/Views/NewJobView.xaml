@@ -195,11 +195,10 @@
                     Margin="20 0">
 
             <ComboBox ItemsSource="{Binding Customers}"
-                      Style="{StaticResource MaterialDesignComboBox}"
+                      Style="{StaticResource DarkComboBoxStyle}"
                       SelectedIndex="0"
                       Background="{StaticResource Primary200ColorBrush}"
-                      Foreground="{StaticResource SecondaryAccentColorBrush}"
-                      Width="200"/>
+                      Foreground="{StaticResource SecondaryAccentColorBrush}"/>
             <Button Command="{Binding AddCustomerCommand}"
                     Width="60"
                     Height="30"
