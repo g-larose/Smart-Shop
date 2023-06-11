@@ -13,14 +13,11 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}"
-
                         CornerRadius="12"
                         Visibility="{TemplateBinding IsOpen,
                                                      Converter={StaticResource BooleanToVisibilityConverter}}">
 
-                        <Border
-                            Width="300"
-                            Height="300">
+                        <Border Width="300" Height="300">
 
                             <ContentControl Content="{TemplateBinding Content}" />
 

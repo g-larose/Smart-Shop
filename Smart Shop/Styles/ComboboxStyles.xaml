@@ -4,7 +4,6 @@
     <Style x:Key="DarkComboBoxStyle" TargetType="ComboBox">
             <Setter Property="Background" Value="#333333" /> <!-- Set your desired darker color here -->
             <Setter Property="Foreground" Value="White" /> <!-- Set the text color -->
-            <Setter Property="Width" Value="200"/>
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="ComboBox">
@@ -27,14 +26,15 @@
                                                     Grid.ColumnSpan="2"
                                                     Background="{TemplateBinding Background}"
                                                     BorderBrush="{TemplateBinding BorderBrush}"
-                                                    BorderThickness="1"/>
+                                                    BorderThickness="1" />
                                             <ContentPresenter x:Name="ContentSite"
+                                                              Grid.Column="0"
                                                               IsHitTestVisible="False"
                                                               Content="{TemplateBinding Content}"
                                                               ContentTemplate="{TemplateBinding ContentTemplate}"
                                                               Margin="3,3,23,3"
                                                               VerticalAlignment="Center"
-                                                              HorizontalAlignment="Left" />
+                                                              HorizontalAlignment="Center" />
                                             <Path x:Name="Arrow"
                                                   Grid.Column="1"
                                                   HorizontalAlignment="Center"
