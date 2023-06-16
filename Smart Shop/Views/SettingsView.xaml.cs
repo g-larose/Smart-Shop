@@ -16,14 +16,13 @@ using System.Windows.Shapes;
 namespace Smart_Shop.Views
 {
     /// <summary>
-    /// Interaction logic for NewJobView.xaml
+    /// Interaction logic for SettingsView.xaml
     /// </summary>
-    public partial class NewJobView : UserControl
+    public partial class SettingsView : UserControl
     {
-        public NewJobView()
+        public SettingsView()
         {
             InitializeComponent();
         }
-
     }
 }

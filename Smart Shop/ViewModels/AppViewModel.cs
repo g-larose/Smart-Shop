@@ -19,6 +19,7 @@ namespace Smart_Shop.ViewModels
         public ViewModelBase? CurrentViewModel => _navigator.CurrentViewModel;
         public ICommand ExitApplicationCommand { get; }
         public ICommand NavigateNewJobCommand { get; }
+        public ICommand NavigateSettingsCommand { get; }
 
    
 
@@ -28,6 +29,7 @@ namespace Smart_Shop.ViewModels
             _dbFactory = dbFactory;
             _navigator.CurrentViewModelChanged += OnCurrentViewModelChanged;
             NavigateNewJobCommand = new NavigateCommand<NewJobViewModel>(_navigator, () => new NewJobViewModel(_dbFactory, _navigator));
+            NavigateSettingsCommand = new NavigateCommand<SettingsViewModel>(_navigator, () => new SettingsViewModel());
             ExitApplicationCommand = new RelayCommand(ExitApp);
         }
 

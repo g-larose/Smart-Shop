@@ -24,10 +24,10 @@
                         </Border>
                         <Border.Effect>
                             <DropShadowEffect
-                                BlurRadius="6"
+                                BlurRadius="16"
                                 Direction="270"
-                                Opacity=".4"
-                                ShadowDepth="4"
+                                Opacity=".6"
+                                ShadowDepth="12"
                                 Color="Black" />
                         </Border.Effect>
                     </Border>

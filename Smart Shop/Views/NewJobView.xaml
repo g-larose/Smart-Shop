@@ -1,415 +1,454 @@
-﻿<UserControl x:Class="Smart_Shop.Views.NewJobView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Smart_Shop.Views"
-             xmlns:modal="clr-namespace:Modal;assembly=Modal"
-             xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-             mc:Ignorable="d" 
-             Height="460" Width="420">
-    <Border Background="{StaticResource PrimaryColorBrush}"
-            CornerRadius="10"
-            Width="410"
-            Height="450"
-            VerticalAlignment="Top"
-            HorizontalAlignment="Left">
+﻿<UserControl
+    x:Class="Smart_Shop.Views.NewJobView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Smart_Shop.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:modal="clr-namespace:Modal;assembly=Modal"
+    Width="420"
+    Height="460"
+    mc:Ignorable="d">
+    <Border
+        Width="410"
+        Height="450"
+        HorizontalAlignment="Left"
+        VerticalAlignment="Top"
+        Background="{StaticResource PrimaryColorBrush}"
+        CornerRadius="10">
         <Border.Effect>
-            <DropShadowEffect BlurRadius="10"
-                              ShadowDepth="6"
-                              Direction="270"
-                              Color="Black"
-                              Opacity=".6"/>
+            <DropShadowEffect
+                BlurRadius="10"
+                Direction="270"
+                Opacity=".6"
+                ShadowDepth="6"
+                Color="Black" />
         </Border.Effect>
         <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="20" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="20" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="40"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="20"/>
-        </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="20" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="20" />
+            </Grid.RowDefinitions>
 
-        <!-- #region Add Customer Modal -->
-        <modal:Modal Grid.Column="1"
-                     Grid.Row="0"
-                     Grid.RowSpan="7"
-                     HorizontalAlignment="Center"
-                     VerticalAlignment="Center"
-                     IsOpen="{Binding IsOpen}"
-                     Margin="0 10 0 0"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Panel.ZIndex="100">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                  <ColumnDefinition Width="20"/>
-                  <ColumnDefinition Width="*"/>
-                  <ColumnDefinition Width="20"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="30"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="20"/>
-                </Grid.RowDefinitions>
-                
-                <!-- #region Customer View Header -->
-                <TextBlock Grid.Column="1"
-                           Grid.Row="0"
-                           Text="Add New Customer"
-                           Foreground="{StaticResource SecondaryAccentColorBrush}"
-                           FontSize="18"
-                           VerticalAlignment="Center"
-                           HorizontalAlignment="Left"
-                           Margin="10 0"/>
-                <!-- #endregion -->
+            <!--#region Add Customer Modal-->
+            <modal:Modal
+                Grid.Row="0"
+                Grid.RowSpan="9"
+                Grid.Column="1"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Panel.ZIndex="100"
+                Background="{StaticResource Primary200ColorBrush}"
+                IsOpen="{Binding IsOpen}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="20" />
+                    </Grid.RowDefinitions>
 
-                <!-- #region Row 1 Company Name -->
-                <TextBox Height="30"
-                         Width="250"
-                         md:HintAssist.Hint="Company Name"
-                         md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                         md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                         Foreground="{StaticResource SecondaryAccentColorBrush}"
-                         Background="{StaticResource Primary200ColorBrush}"
-                         Padding="6"
-                         Grid.Column="1"
-                         Grid.Row="1"/>
-                <!-- #endregion -->
+                    <!--#region Customer View Header-->
+                    <TextBlock
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="10,0"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontSize="18"
+                        Foreground="{StaticResource SecondaryAccentColorBrush}"
+                        Text="Add New Customer" />
+                    <!--#endregion-->
 
-                <!-- #region Company Identifier -->
-                 <TextBox Height="30"
-                          Width="250"
-                          md:HintAssist.Hint="Identifier"
-                          md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                          md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                          Foreground="{StaticResource SecondaryAccentColorBrush}"
-                          Background="{StaticResource Primary200ColorBrush}"
-                          Padding="6"
-                          Grid.Column="1"
-                          Grid.Row="2"
-                          Text="{Binding Identifier}"
-                          IsEnabled="False"/>
+                    <!--#region Row 1 Company Name-->
+                    <TextBox
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Width="250"
+                        Height="30"
+                        Padding="6"
+                        md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                        md:HintAssist.Hint="Company Name"
+                        md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                        Background="{StaticResource Primary200ColorBrush}"
+                        Foreground="{StaticResource SecondaryAccentColorBrush}"
+                        Text="{Binding Customer.CompanyName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" />
+                    <!--#endregion-->
 
-                <!-- #endregion -->
+                    <!--#region Company Identifier-->
+                    <TextBox
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Width="250"
+                        Height="30"
+                        Padding="6"
+                        md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                        md:HintAssist.Hint="Identifier"
+                        md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                        Background="{StaticResource Primary200ColorBrush}"
+                        Foreground="{StaticResource SecondaryAccentColorBrush}"
+                        IsEnabled="False"
+                        Text="{Binding Identifier}" />
 
-                <!-- #region Phone # -->
-                 <TextBox Height="30"
-                          Width="250"
-                          md:HintAssist.Hint="Phone #"
-                          md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                          md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                          Foreground="{StaticResource SecondaryAccentColorBrush}"
-                          Background="{StaticResource Primary200ColorBrush}"
-                          Padding="6"
-                          Grid.Column="1"
-                          Grid.Row="3"
-                          Text="{Binding NewCompanyIdentifier}"/>
+                    <!--#endregion-->
 
-                <!-- #endregion -->
+                    <!--#region Phone #-->
+                    <TextBox
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Width="250"
+                        Height="30"
+                        Padding="6"
+                        md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                        md:HintAssist.Hint="Phone #"
+                        md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                        Background="{StaticResource Primary200ColorBrush}"
+                        Foreground="{StaticResource SecondaryAccentColorBrush}"
+                        Text="{Binding NewCompanyIdentifier}" />
 
-                <!-- #region Contact Name -->
-                 <TextBox Height="30"
-                          Width="250"
-                          md:HintAssist.Hint="Contact Name"
-                          md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                          md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                          Foreground="{StaticResource SecondaryAccentColorBrush}"
-                          Background="{StaticResource Primary200ColorBrush}"
-                          Padding="6"
-                          Grid.Column="1"
-                          Grid.Row="4"
-                          Text="{Binding NewCompanyIdentifier}"/>
+                    <!--#endregion-->
 
-                <!-- #endregion -->
+                    <!--#region Contact Name-->
+                    <TextBox
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        Width="250"
+                        Height="30"
+                        Padding="6"
+                        md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                        md:HintAssist.Hint="Contact Name"
+                        md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                        Background="{StaticResource Primary200ColorBrush}"
+                        Foreground="{StaticResource SecondaryAccentColorBrush}"
+                        Text="{Binding NewCompanyIdentifier}" />
+
+                    <!--#endregion-->
 
 
-                <!-- #region Commands -->
-                <StackPanel Orientation="Horizontal"
-                            Grid.Column="1"
-                            Grid.Row="6"
-                            HorizontalAlignment="Right"
-                            Margin="10 0">
-                    
-                    <Button Width="60"
+                    <!--#region Commands-->
+                    <StackPanel
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Margin="10,0"
+                        HorizontalAlignment="Right"
+                        Orientation="Horizontal">
+
+                        <Button
+                            Width="60"
                             Height="40"
                             HorizontalAlignment="Right"
                             Background="Transparent"
                             BorderBrush="Transparent"
                             Command="">
-                         <md:PackIcon Kind="ContentSave"
-                                      Width="32"
-                                      Height="34"
-                                      Foreground="GreenYellow"/>
+                            <md:PackIcon
+                                Width="32"
+                                Height="34"
+                                Foreground="GreenYellow"
+                                Kind="ContentSave" />
 
-                     </Button>
-                     <Button Width="60"
-                             Height="40"
-                             HorizontalAlignment="Right"
-                             Background="Transparent"
-                             BorderBrush="Transparent"
-                             Command="">
-                         <md:PackIcon Kind="CancelThick"
-                                      Width="32"
-                                      Height="34"
-                                      Foreground="OrangeRed"/>
+                        </Button>
+                        <Button
+                            Width="60"
+                            Height="40"
+                            HorizontalAlignment="Right"
+                            Background="Transparent"
+                            BorderBrush="Transparent"
+                            Command="{Binding CloseModalCommand}">
+                            <md:PackIcon
+                                Width="32"
+                                Height="34"
+                                Foreground="OrangeRed"
+                                Kind="CancelThick" />
 
-                     </Button>
-                </StackPanel>
-               
-                <!-- #endregion -->
-            </Grid>
+                        </Button>
+                    </StackPanel>
+
+                    <!--#endregion-->
+                </Grid>
 
 
-        </modal:Modal>
-        <!-- #endregion -->
+            </modal:Modal>
+            <!--#endregion-->
 
-        <!-- #region Header -->
-        <TextBlock Grid.Column="1"
-                   Grid.Row="0" 
-                   Text="New Job"
-                   FontSize="22"
-                   Foreground="{StaticResource SecondaryAccentColorBrush}"
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Center"
-                   Margin="10 0 0 0"/>
-        <!-- #endregion -->
+            <!--#region Header-->
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="1"
+                Margin="10,0,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="22"
+                Foreground="{StaticResource SecondaryAccentColorBrush}"
+                Text="New Job" />
+            <!--#endregion-->
 
-        <!-- #region Row 1 CUSTOMERS -->
-        <StackPanel Grid.Column="1"
-                    Grid.Row="1"
-                    Orientation="Horizontal"
-                    HorizontalAlignment="Left"
-                    Margin="10 0"
-                    Width="350">
-
-            <ComboBox ItemsSource="{Binding Customers}"
-                      Style="{StaticResource DarkComboBoxStyle}"
-                      SelectedIndex="0"
-                      Background="{StaticResource Primary200ColorBrush}"
-                      Foreground="{StaticResource SecondaryAccentColorBrush}" 
-                      />
-            <Button Command="{Binding AddCustomerCommand}"
+            <!--#region Row 1 CUSTOMERS-->
+            <StackPanel
+                Grid.Row="1"
+                Grid.Column="1"
+                Width="350"
+                Margin="10,0"
+                HorizontalAlignment="Left"
+                Orientation="Horizontal">
+<!-- TODO fix combobox background with style -->
+                <ComboBox
+                    Width="200"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="Black"
+                    ItemsSource="{Binding Customers}"
+                    SelectedIndex="0"/>
+                <Button
                     Width="60"
                     Height="30"
+                    Margin="4,-6,0,0"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Margin="4 -6 0 0"
+                    Command="{Binding AddCustomerCommand}"
                     ToolTip="Add New Customer">
-                <md:PackIcon Kind="PlusCircle"
-                             Width="30"
-                             Height="20"/>
-            </Button>
+                    <md:PackIcon
+                        Width="30"
+                        Height="20"
+                        Kind="PlusCircle" />
+                </Button>
 
-        </StackPanel>
-        <!-- #endregion -->
+            </StackPanel>
+            <!--#endregion-->
 
-        <!-- #region ROW 2 Invoice # / PO #-->
-        <StackPanel Grid.Column="1"
-                    Grid.Row="2"
-                    Orientation="Horizontal">
-            <TextBox Height="30"
-                     Width="150"
-                     HorizontalAlignment="Left"
-                     Margin="10 0 -10 0"
-                     md:HintAssist.Hint="Invoice #"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
-              <Button Command="{Binding AddNewCustomerCommand}"
+            <!--#region ROW 2 Invoice # / PO #-->
+            <StackPanel
+                Grid.Row="2"
+                Grid.Column="1"
+                Orientation="Horizontal">
+                <TextBox
+                    Width="150"
+                    Height="30"
+                    Margin="10,0,-10,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="Invoice #"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
+                <Button
                     Width="60"
                     Height="40"
+                    Margin="4,0"
+                    HorizontalContentAlignment="Left"
                     Background="Transparent"
                     BorderBrush="Transparent"
-                    Margin="4 0"
-                    ToolTip="Generate New Invoice Number"
-                    HorizontalContentAlignment="Left">
-                <md:PackIcon Kind="Numbers"
-                             Width="30"
-                             Height="30"
-                             Foreground="{StaticResource AccentToAccent100GradientBrush}"
-                             HorizontalContentAlignment="Left"/>
-            </Button>
-             <TextBox Height="30"
-                     Width="153"
-                     HorizontalAlignment="Left"
-                     Margin="-10 0 0 0"
-                     md:HintAssist.Hint="PO #"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
+                    Command="{Binding AddNewCustomerCommand}"
+                    ToolTip="Generate New Invoice Number">
+                    <md:PackIcon
+                        Width="30"
+                        Height="30"
+                        HorizontalContentAlignment="Left"
+                        Foreground="{StaticResource AccentToAccent100GradientBrush}"
+                        Kind="Numbers" />
+                </Button>
+                <TextBox
+                    Width="153"
+                    Height="30"
+                    Margin="-10,0,0,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="PO #"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
 
-        </StackPanel>
-        <!-- #endregion -->
+            </StackPanel>
+            <!--#endregion-->
 
-        <!-- #region ROW 3 Due Date / Received Date -->
-        <StackPanel Grid.Column="1"
-                    Grid.Row="3"
-                    Orientation="Horizontal">
-            <TextBox Height="30"
-                     Width="170"
-                     HorizontalAlignment="Left"
-                     Margin="10 0 10 0"
-                     md:HintAssist.Hint="Received Date"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
-            <TextBox Height="30"
-                     Width="170"
-                     HorizontalAlignment="Left"
-                     Margin="0 0"
-                     md:HintAssist.Hint="Due Date"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
+            <!--#region ROW 3 Due Date / Received Date-->
+            <StackPanel
+                Grid.Row="3"
+                Grid.Column="1"
+                Orientation="Horizontal">
+                <TextBox
+                    Width="170"
+                    Height="30"
+                    Margin="10,0,10,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="Received Date"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
+                <TextBox
+                    Width="170"
+                    Height="30"
+                    Margin="0,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="Due Date"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
 
-        </StackPanel>
-        <!-- #endregion -->
+            </StackPanel>
+            <!--#endregion-->
 
-        <!-- #region ROW 4 Job Name -->
-        <StackPanel Grid.Column="1"
-                    Grid.Row="4"
-                    Orientation="Horizontal">
-            <TextBox Height="30"
-                     Width="350"
-                     HorizontalAlignment="Left"
-                     Margin="10 0 10 0"
-                     md:HintAssist.Hint="Job Name"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
-
-
-        </StackPanel>
-        <!-- #endregion -->
-
-         <!-- #region ROW 5 Quantity / Price Per Piece / Total -->
-        <StackPanel Grid.Column="1"
-                    Grid.Row="5"
-                    Orientation="Horizontal">
-            <TextBox Height="30"
-                     Width="110"
-                     HorizontalAlignment="Left"
-                     Margin="10 0 10 0"
-                     md:HintAssist.Hint="Quantity"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
-            <TextBox Height="30"
-                     Width="110"
-                     HorizontalAlignment="Left"
-                     Margin="0 0 10 0"
-                     md:HintAssist.Hint="Price Per Piece $"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
-            <TextBox Height="30"
-                     Width="110"
-                     HorizontalAlignment="Left"
-                     Margin="0 0 10 0"
-                     md:HintAssist.Hint="Total $"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
+            <!--#region ROW 4 Job Name-->
+            <StackPanel
+                Grid.Row="4"
+                Grid.Column="1"
+                Orientation="Horizontal">
+                <TextBox
+                    Width="350"
+                    Height="30"
+                    Margin="10,0,10,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="Job Name"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
 
 
-        </StackPanel>
-        <!-- #endregion -->
+            </StackPanel>
+            <!--#endregion-->
 
-         <!-- #region ROW 6 Job Name -->
-        <StackPanel Grid.Column="1"
-                    Grid.Row="6"
-                    Orientation="Horizontal">
-            <TextBox Height="30"
-                     Width="350"
-                     HorizontalAlignment="Left"
-                     Margin="10 0 10 0"
-                     md:HintAssist.Hint="Comment"
-                     md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
-                     md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
-                     Foreground="{StaticResource SecondaryAccentColorBrush}"
-                     Background="{StaticResource Primary200ColorBrush}"
-                     Padding="6"/>
+            <!--#region ROW 5 Quantity / Price Per Piece / Total-->
+            <StackPanel
+                Grid.Row="5"
+                Grid.Column="1"
+                Orientation="Horizontal">
+                <TextBox
+                    Width="110"
+                    Height="30"
+                    Margin="10,0,10,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="Quantity"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
+                <TextBox
+                    Width="110"
+                    Height="30"
+                    Margin="0,0,10,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="Price Per Piece $"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
+                <TextBox
+                    Width="110"
+                    Height="30"
+                    Margin="0,0,10,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="Total $"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
 
 
-        </StackPanel>
+            </StackPanel>
+            <!--#endregion-->
 
-        <!-- #region Control Buttons -->
-            <Grid Grid.Column="1"
-                  Grid.Row="8">
+            <!--#region ROW 6 Job Name-->
+            <StackPanel
+                Grid.Row="6"
+                Grid.Column="1"
+                Orientation="Horizontal">
+                <TextBox
+                    Width="350"
+                    Height="30"
+                    Margin="10,0,10,0"
+                    Padding="6"
+                    HorizontalAlignment="Left"
+                    md:HintAssist.Foreground="{StaticResource Primary500ColorBrush}"
+                    md:HintAssist.Hint="Comment"
+                    md:TextFieldAssist.UnderlineBrush="{StaticResource SecondaryAccentColorBrush}"
+                    Background="{StaticResource Primary200ColorBrush}"
+                    Foreground="{StaticResource SecondaryAccentColorBrush}" />
+
+
+            </StackPanel>
+
+            <!--#region Control Buttons-->
+            <Grid Grid.Row="8" Grid.Column="1">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Column="1"
-                            Orientation="Horizontal"
-                            HorizontalAlignment="Left"
-                            Margin="20 0">
+                <StackPanel
+                    Grid.Column="1"
+                    Margin="20,0"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
 
-                    <Button Command=""
-                            Width="60"
-                            Height="40"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Margin="4 0"
-                            ToolTip="Save New Job">
-                        <md:PackIcon Kind="ContentSave"
-                                     Width="30"
-                                     Height="30"
-                                     Foreground="YellowGreen"/>
+                    <Button
+                        Width="60"
+                        Height="40"
+                        Margin="4,0"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Command=""
+                        ToolTip="Save New Job">
+                        <md:PackIcon
+                            Width="30"
+                            Height="30"
+                            Foreground="YellowGreen"
+                            Kind="ContentSave" />
                     </Button>
-                    <Button Command=""
-                            Width="60"
-                            Height="40"
-                            Background="Transparent"
-                            BorderBrush="Transparent"
-                            Margin="4 0"
-                            ToolTip="Cancel and Close">
+                    <Button
+                        Width="60"
+                        Height="40"
+                        Margin="4,0"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Command=""
+                        ToolTip="Cancel and Close">
 
-                            <md:PackIcon Kind="CancelThick"
-                                     Width="30"
-                                     Height="30"
-                                     Foreground="OrangeRed" />
+                        <md:PackIcon
+                            Width="30"
+                            Height="30"
+                            Foreground="OrangeRed"
+                            Kind="CancelThick" />
                     </Button>
 
-               </StackPanel>
+                </StackPanel>
 
             </Grid>
-               
-        <!-- #endregion -->
+
+            <!--#endregion-->
 
 
-    </Grid>
+        </Grid>
     </Border>
-    
+
 </UserControl>
