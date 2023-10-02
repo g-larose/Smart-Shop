@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
 
 namespace Smart_Shop.Models
 {
     public class Customer
     {
-        public int CustomerId { get; set; }
+        public int Id { get; set; }
         public Guid Identifier { get; set; }
-        public string CompanyName { get; set; } = string.Empty;
-        public string ContactName { get; set; } = string.Empty;
-        public string Email { get; set; } = string.Empty;
+        public string Company { get; set; } = string.Empty;
+        public string Contact { get; set; } = string.Empty;
+        [Phone]
         public string Phone { get; set; } = string.Empty;
-        public string Address { get; set; } = string.Empty;
-        public ICollection<Invoice>? Invoices { get; set; }
+        [EmailAddress]
+        public string Email { get; set; } = string.Empty;
+        public virtual ICollection<Invoice>? Invoices { get; set; }
 
     }
 }

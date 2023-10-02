@@ -206,28 +206,27 @@
             <!--#endregion-->
 
             <!--#region Row 1 CUSTOMERS-->
-            <StackPanel
-                Grid.Row="1"
-                Grid.Column="1"
-                Width="350"
-                Margin="10,0"
-                HorizontalAlignment="Left"
-                Orientation="Horizontal">
-<!-- TODO fix combobox background with style -->
-                <ComboBox
-                    Width="200"
-                    Background="{StaticResource Primary200ColorBrush}"
-                    Foreground="Black"
-                    ItemsSource="{Binding Customers}"
-                    SelectedIndex="0"/>
-                <Button
-                    Width="60"
-                    Height="30"
-                    Margin="4,-6,0,0"
-                    Background="Transparent"
-                    BorderBrush="Transparent"
-                    Command="{Binding AddCustomerCommand}"
-                    ToolTip="Add New Customer">
+            <StackPanel Grid.Row="1"
+                        Grid.Column="1"
+                        Width="350"
+                        Margin="10,0"
+                        HorizontalAlignment="Left"
+                        Orientation="Horizontal">
+                <!--  TODO fix combobox background with style  -->
+                <ComboBox Style="{StaticResource MaterialDesignFloatingHintComboBox}"
+                          md:HintAssist.Hint="Customers"
+                          md:HintAssist.Foreground="{StaticResource PrimaryHueMidBrush}"
+                          Width="200"
+                          Foreground="{StaticResource Primary400ColorBrush}"
+                          ItemsSource="{Binding Customers}"
+                          SelectedIndex="-1" />
+                <Button Width="60"
+                        Height="30"
+                        Margin="4,-6,0,0"
+                        Background="Transparent"
+                        BorderBrush="Transparent"
+                        Command="{Binding AddCustomerCommand}"
+                        ToolTip="Add New Customer">
                     <md:PackIcon
                         Width="30"
                         Height="20"

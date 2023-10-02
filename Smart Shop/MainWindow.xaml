@@ -64,7 +64,7 @@
 
             <StackPanel Orientation="Vertical"
                         Grid.Row="0">
-                <Button Command="{Binding NavigateNewJobCommand}"
+                <Button Command="{Binding NavigateHomeCommand}"
                         Width="80"
                         Height="60"
                         Background="Transparent"
@@ -83,7 +83,7 @@
 
             <StackPanel Grid.Row="1"
                         Orientation="Vertical">
-                 <Button 
+                 <Button Command="{Binding NavigateNewJobCommand}"
                          Width="80"
                          Height="60"
                          Background="Transparent"
@@ -229,6 +229,9 @@
                             </DataTemplate>
                             <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
                                 <v:SettingsView />
+                            </DataTemplate>
+                            <DataTemplate DataType="{x:Type vm:HomeViewModel}">
+                                <v:HomeView />
                             </DataTemplate>
                         </ContentControl.Resources>
 

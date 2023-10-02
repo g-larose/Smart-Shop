@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Navigation;
+using Microsoft.EntityFrameworkCore;
 using Smart_Shop.Commands;
+using Smart_Shop.Data;
 using Smart_Shop.Factories;
 using Smart_Shop.Interfaces;
 using Smart_Shop.Models;
@@ -16,7 +18,7 @@ namespace Smart_Shop.ViewModels
 {
    public class NewJobViewModel : ViewModelBase
    {
-       private AppDbContextFactory _dbFactory;
+       private readonly IDbContextFactory<AppDbContext> _dbFactory;
        private INavigator _navigator;
        public ICommand AddCustomerCommand { get; }
        public ICommand CloseModalCommand { get; }
@@ -54,7 +56,7 @@ namespace Smart_Shop.ViewModels
            set => OnPropertyChanged(ref _customer, value);
        }
 
-       public NewJobViewModel(AppDbContextFactory dbFactory, INavigator navigator)    
+       public NewJobViewModel(IDbContextFactory<AppDbContext> dbFactory, INavigator navigator)    
        {
            _dbFactory = dbFactory;
            _navigator = navigator;
@@ -68,7 +70,7 @@ namespace Smart_Shop.ViewModels
 
         private void CloseModal()
         {
-            Customer.CompanyName = "";
+            Customer.Company = "";
             IsOpen = false;
         }
 
@@ -81,7 +83,6 @@ namespace Smart_Shop.ViewModels
         private void LoadCustomers()
        {
            Customers = new List<string>();
-           Customers.Add("Choose Customer");
            Customers.Add("Inked Apparel Screen Printing");
            Customers.Add("Choo Choo Lawn Equipment");
        }

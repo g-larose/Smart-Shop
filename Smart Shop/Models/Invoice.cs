@@ -8,14 +8,13 @@ namespace Smart_Shop.Models
 {
     public class Invoice
     {
-        public int InvoiceId { get; set; }
+        public int Id { get; set; }
         public Guid Identifier { get; set; }
-        public string Name { get; set; } = string.Empty;
-        public string Description { get; set; } = string.Empty;
-
-
-        //Navigation Properties
-        public int CustomerId { get; set; }
-        public Customer? Customer { get; set; }
+        public DateTime Created { get; set; }
+        public DateTime DueDate { get; set; }
+        public string CreatedBy { get; set; } = string.Empty;
+        public double Total { get; set; }
+        public Status Status { get; set; }
+        public virtual ICollection<Item>? Items { get; set; }
     }
 }
